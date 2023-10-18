@@ -99,3 +99,6 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR/'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [BASE_DIR/'assets']
+
+SITE_ID = 1
+SITE_NAME = "Travel Blog"
