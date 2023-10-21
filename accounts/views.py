@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout, get_user_model
 User = get_user_model()
 
 # Create your views here.
-def login(request):
+def login_user(request):
     ctx = {}
     return render(request, 'accounts/login.html', ctx)
 
