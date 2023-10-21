@@ -2,8 +2,19 @@
 {% load static %}
 {% block title %}Home{% endblock %}
 {% block content %}
+    <img src="{% static 'images/hero.png' %}" alt="" class="slik">
     <div class="main-content">
         
     </div>
 {% endblock %}
+
+{% block head %}
+    <style>
+        .slik{
+           position: fixed;
+           bottom: 0;
+           right: 0;
+        }
+    </style>
+{% endblock head %}
     
