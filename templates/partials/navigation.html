@@ -26,7 +26,8 @@
         <ul class="navbar-nav justify-content-start flex-grow-1 py-3">
             {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link active d-flex align-items-center justify-content-between" aria-current="page" href="{% url 'article_form' %}">
+                <a class="nav-link active d-flex align-items-center justify-content-between" aria-current="page"
+                    href="{% url 'article_form' %}">
                     Add Article
                     <i class="fa fa-plus"></i>
                 </a>
