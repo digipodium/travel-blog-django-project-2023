@@ -1,2 +1,5 @@
 *.pyc
 *.cpython-311.pyc
+*.pyo
+__pycache__/*
+```
