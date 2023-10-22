@@ -1,9 +1,10 @@
+{% load static %}
 <nav class="navbar navbar-expand navbar-light bg-transparent px-2">
     <div class="nav navbar-nav">
         <a class="p-2 d-flex align-items-center btn" data-bs-toggle="offcanvas" href="#sidemenu" role="button"
             aria-controls="sidemenu">
             <i class="fa fa-bars fs-3"></i>
-            <img src="https://via.placeholder.com/40" alt="logo" class="rounded-circle ms-3">
+            <img src="{% static 'images/logo_light.png' %}" alt="logo" class="rounded-sm ms-3" width="42">
         </a>
     </div>
     <!-- centers webpage title -->
@@ -21,22 +22,46 @@
         <div>
             <span class="fs-2"> Travel Blog 🧳</span>
         </div>
+
+        <ul class="navbar-nav justify-content-start flex-grow-1 py-3">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link active d-flex align-items-center justify-content-between" aria-current="page" href="{% url 'article_form' %}">
+                    Add Article
+                    <i class="fa fa-plus"></i>
+                </a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center justify-content-between" href="#">
+                    View articles
+                    <i class="fa fa-eye"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center justify-content-between" href="#">
+                    Contact us
+                    <i class="fa fa-envelope"></i>
+                </a>
+            </li>
+        </ul>
+
         <div class="auth-section mt-auto">
             <div class="d-flex align-items-center justify-content-between">
                 {% if user.is_authenticated %}
-                    {{ user.username|title }}
-                    <a href="{% url 'logout' %}" class="btn btn-outline-primary">
-                        <i class="fa fa-sign-out"></i>
-                    </a>
+                {{ user.username|title }}
+                <a href="{% url 'logout' %}" class="btn btn-outline-primary">
+                    <i class="fa fa-sign-out"></i>
+                </a>
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-outline-primary">
-                        Login
-                        <i class="fa fa-sign-in"></i>
-                    </a>
-                    <a href="{% url 'register' %}" class="btn btn-outline-success">
-                        Register
-                        <i class="fa fa-user-plus"></i>
-                    </a>
+                <a href="{% url 'login' %}" class="btn btn-outline-primary">
+                    Login
+                    <i class="fa fa-sign-in"></i>
+                </a>
+                <a href="{% url 'register' %}" class="btn btn-outline-success">
+                    Register
+                    <i class="fa fa-user-plus"></i>
+                </a>
                 {% endif %}
 
             </div>
